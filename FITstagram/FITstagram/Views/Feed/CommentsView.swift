@@ -139,6 +139,7 @@ extension CommentsView {
                     Button {
                         comments.append(
                             Comment(
+                                id: String(Int.random(in: 1..<10000))+String(NSDate().hashValue),
                                 author: .userMockMe,
                                 likes: [],
                                 text: text

@@ -27,13 +27,15 @@ struct PostView: View {
                 .padding(.horizontal)
             
             if let photo = post.photos.first {
-                RemoteImage(url: photo)
-                    .aspectRatio(contentMode: .fill)
-                    .frame(
-                        width: UIScreen.main.bounds.size.width,
-                        height: 300
-                    )
-                    .clipped()
+                NavigationLink(destination: PostDetailView(post: post), label: {
+                    RemoteImage(url: photo)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(
+                            width: UIScreen.main.bounds.size.width,
+                            height: 300
+                        )
+                        .clipped()
+                })
             }
             
             footerView

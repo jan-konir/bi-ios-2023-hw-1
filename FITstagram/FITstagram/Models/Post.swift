@@ -60,7 +60,7 @@ extension Post {
         self.id = try container.decode(String.self, forKey: .id)
         self.author = try container.decode(User.self, forKey: .author)
         self.text = try container.decode(String.self, forKey: .text)
-        let likes = try container.decode([String].self, forKey: .likes)
+        let likes = try container.decode([Likes].self, forKey: .likes)
         self.likes = likes.count
         self.comments = try container.decode(Int.self, forKey: .comments)
         self.photos = try container.decode([URL].self, forKey: .photos)
